@@ -4,32 +4,37 @@ const http = require('http');
 const debug = require('debug')('nodestr:server');
 const express = require('express');
 
-// const app = express();
-// const port = 3000;
-// app.set('port', port);
-
-// const server = http.createServer(app);
-// const router = express.Router();
-
-// const route = router.get('/', (req, res, next) => {
-//     res.status(200).send({
-//         title: "Node Store API",
-//         version: "0.0.1"
-//     })
-// });
-
-// app.use('/', route);
-
-// server.listen(port);
-// console.log('API rodando na porta ' + port);
-
 const app = express();
-const port = 3000
+const port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const server = http.createServer(app);
+const router = express.Router();
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+const route = router.get('/', (req, res, next) => {
+    res.status(200).send({
+        title: "Node Store API",
+        version: "0.0.1"
+    });
+});
+
+app.use('/', route);
+
+server.listen(port);
+console.log('API rodando na porta ' + port);
+
+/* normalizando porta (nem sempre a 3000 vai estar disponivel) */
+
+function normalizePort(val){
+    const port = parseInt(val, 10);
+
+    if(isNaN(port)){
+        return val;
+    }
+
+    if(port >= 0){
+        return port;
+    }
+
+    return false;
+}
