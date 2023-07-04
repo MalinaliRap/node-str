@@ -4,19 +4,14 @@
   "description": "Curso de nodejs pelo https://balta.io/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node ./bin/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "debug": "^4.3.4",
-    "ee-first": "^1.1.1",
     "express": "^4.18.2",
-    "http": "^0.0.1-security",
-    "merge-descriptors": "^1.0.1",
-    "parseurl": "^1.3.3",
-    "path-to-regexp": "^6.2.1",
-    "unpipe": "^1.0.0"
+    "http": "^0.0.1-security"
   }
 }
