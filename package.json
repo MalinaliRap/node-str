@@ -16,6 +16,8 @@
     "http": "^0.0.1-security"
   },
   "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-config-google": "^0.14.0",
     "nodemon": "^2.0.22"
   }
 }
