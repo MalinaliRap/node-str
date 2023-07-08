@@ -4,9 +4,10 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const schema = new Schema({
-  customer: {
+  costumer: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Costumer",
+    required: true,
   },
   number: {
     type: String,

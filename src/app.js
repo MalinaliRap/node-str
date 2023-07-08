@@ -17,6 +17,7 @@ const Order = require("./models/order")
 const indexRoute = require("./routes/index-route")
 const productRoute = require("./routes/product-route")
 const costumerRoute = require("./routes/costumer-route")
+const orderRoute = require("./routes/order-route")
 
 /* tratativa de response da requisição */
 app.use(bodyParser.json())
@@ -25,5 +26,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use("/", indexRoute)
 app.use("/products", productRoute)
 app.use("/costumers", costumerRoute)
+app.use("/orders", orderRoute)
 
 module.exports = app
