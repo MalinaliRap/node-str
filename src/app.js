@@ -10,6 +10,7 @@ mongoose.connect("mongodb://mali:mali1284@localhost:27017/admin")
 
 // Carregar modelos
 const Product = require("./models/product")
+const Costumer = require("./models/customer")
 
 // Carregar as rotas
 const indexRoute = require("./routes/index-route")
