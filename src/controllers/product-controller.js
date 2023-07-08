@@ -1,6 +1,5 @@
 "use-strict"
-const mongoose = require("mongoose")
-const Product = mongoose.model("Product")
+
 const ValidationContrat = require("../validators/fluent-validator")
 const repository = require("../repositories/product-repository")
 
@@ -14,6 +13,7 @@ exports.get = async (req, res, next) => {
     })
   }
 }
+
 exports.getBySlug = async (req, res, next) => {
   try {
     let data = await repository.getBySlug(req.params.slug)
